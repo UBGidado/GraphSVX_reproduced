@@ -30,7 +30,7 @@ Run the container
 docker compose up
 
 Access the container
-docker exec -it graphsvx_container /bin/bash
+docker exec -it graphsvx_graphsvx /bin/bash
 
 
 ---
