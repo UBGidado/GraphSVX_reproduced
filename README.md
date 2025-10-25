@@ -4,11 +4,6 @@
 This repository contains the reproduced code for the paper [GraphSVX: Shapley Value Explanations for Graph Neural Networks_](https://2021.ecmlpkdd.org/wp-content/uploads/2021/07/sub_135.pdf), 
 by Alexandre Duval and Fragkiskos Malliaros - accepted at the _European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML PKDD) 2021_. 
 
-# GraphSVX (Reproduced)
-
-This repository contains the **reproducible implementation of the GraphSVX framework**, focusing on **explainable AI for Graph Neural Networks (GNNs)**.  
-It includes retrained models, Docker-based setup for environment consistency, and evaluation scripts for running experiments on benchmark graph datasets.
-
 ---
 
 ##  Overview
