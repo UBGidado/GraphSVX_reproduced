@@ -5,12 +5,20 @@
 
 import numpy as np
 from torch.nn import init
-from torch_geometric.nn import GCNConv, GATConv
 from torch_geometric.utils import to_dense_adj
 import torch_geometric.transforms as T
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+# In src/models.py, replace outdated imports:
+try:
+    from torch_geometric.nn import GCNConv, GATConv, GlobalAttention
+except ImportError:
+    # Fallback for older versions
+    from torch_geometric.nn import GCNConv, GATConv
+    from torch_geometric.nn import global_add_pool
+
+# Replace any inspector imports if they exist
 
 class GCN(nn.Module):
     """

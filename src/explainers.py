@@ -20,8 +20,9 @@ from sklearn.linear_model import (LassoLars, Lasso,
 from sklearn.metrics import r2_score
 from torch.autograd import Variable
 from torch.utils.data import DataLoader, TensorDataset
-from torch_geometric.nn import GNNExplainer as GNNE
 from torch_geometric.nn import MessagePassing
+from torch_geometric.explain import GNNExplainer as GNNE
+
 
 from src.models import LinearRegressionModel
 from src.plots import (denoise_graph, k_hop_subgraph, log_graph,

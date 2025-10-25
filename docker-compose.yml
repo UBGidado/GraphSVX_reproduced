@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  graphsvx:
+    build: .
+    container_name: graphsvx_cpu
+    working_dir: /app
+    volumes:
+      - .:/app
+    tty: true
