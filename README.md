@@ -20,7 +20,7 @@ The reproduction includes:
 
 Ensure you have **Docker** and **Docker Compose** installed.
 
-### 1️⃣ Build the Docker image
+###  Build the Docker image
 ```bash
 docker compose build
 
