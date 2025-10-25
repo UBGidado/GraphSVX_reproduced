@@ -1,21 +1,48 @@
 
-# GraphSVX: Shapley Value Explanations for Graph Neural Networks 
+#  GraphSVX (Reproduced)
 
-This repository contains the source code for the paper [GraphSVX: Shapley Value Explanations for Graph Neural Networks_](https://2021.ecmlpkdd.org/wp-content/uploads/2021/07/sub_135.pdf), 
+This repository contains the reproduced code for the paper [GraphSVX: Shapley Value Explanations for Graph Neural Networks_](https://2021.ecmlpkdd.org/wp-content/uploads/2021/07/sub_135.pdf), 
 by Alexandre Duval and Fragkiskos Malliaros - accepted at the _European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML PKDD) 2021_. 
 
-### Abstract
-Graph Neural Networks (GNNs) achieve significant performance for various learning tasks on geometric data due to the incorporation of graph structure into the learning of node representations, which renders their comprehension challenging. In this paper, we first propose a unified framework satisfied by most existing GNN explainers. Then, we introduce GraphSVX, a post hoc local model-agnostic explanation method specifically designed for GNNs. GraphSVX is a decomposition technique that captures the “fair” contribution of each feature and node towards the explained prediction by constructing a surrogate model on a perturbed dataset. It extends to graphs and ultimately provides as explanation the Shapley Values from game theory. Experiments on real-world and synthetic datasets demonstrate that GraphSVX achieves state-of-the-art performance compared to baseline models while presenting core theoretical and human-centric properties.
+# GraphSVX (Reproduced)
 
-![Framework Image](/utils/pipeline_figure.png)
+This repository contains the **reproducible implementation of the GraphSVX framework**, focusing on **explainable AI for Graph Neural Networks (GNNs)**.  
+It includes retrained models, Docker-based setup for environment consistency, and evaluation scripts for running experiments on benchmark graph datasets.
 
-### Set up 
-If needed, install the required packages contained in [requirements.txt](/requirements.txt) as well as three additional packages 
-that need to be installed separately (because of their dependency to pytorch). 
+---
+
+##  Overview
+
+**GraphSVX** is an explainability framework for GNNs based on **Shapley Value approximations** [GraphSVX: Shapley Value Explanations for Graph Neural Networks_](https://2021.ecmlpkdd.org/wp-content/uploads/2021/07/sub_135.pdf).  
+It provides insights into which nodes and features most influence a model’s prediction.
+
+The reproduction includes:
+- Verified training and evaluation scripts for GCN and GAT.
+- reproduced models are in models_new folder
+- Dockerized environment for full reproducibility.
+
+##  Reproducing the Results (Docker)
+
+Ensure you have **Docker** and **Docker Compose** installed.
+
+### 1️⃣ Build the Docker image
+```bash
+docker compose build
+
+docker exec -it graphsvx_container /bin/bash
+
+Run the container
+docker compose up
+
+Access the container
+docker exec -it graphsvx_container /bin/bash
+
+
+---
 ```
-pip install -r requirements.txt
-pip install torch-sparse torch-scatter torch-cluster
-```
+## 🧩 Repository Structure
+
+
 
 ### To explain a model using GraphSVX
 To explain the predictions of a model on a node or graph classification task, run [script_explain.py](/script_explain.py):
